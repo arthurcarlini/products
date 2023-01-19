@@ -1,16 +1,16 @@
 {
   "products": [
     {
-      "prodName": "Coca-cola",
-      "prodDate": "2023-12-31",
-      "prodDays": 350,
-      "id": 1
+      "prodName": "",
+      "prodDate": "",
+      "prodDays": null,
+      "id": 2
     },
     {
-      "prodName": "someProduct",
-      "prodDate": "2023-02-12",
-      "prodDays": 28,
-      "id": 2
+      "prodName": "",
+      "prodDate": "",
+      "prodDays": null,
+      "id": 3
     }
   ]
 }

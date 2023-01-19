@@ -3,27 +3,32 @@ import './Home.css'
 import axios from 'axios'
 
 import Card from '../../components/Card'
+import Modal from '../../components/Modal'
 
 const Home = () => {
 
   const url = "http://localhost:3000/products"
 
-  // Modal functions
-  const switchModal = () => {
-    const modal = document.querySelector('.modal')
-    const actualStyle = modal.style.display
-    if (actualStyle == 'block') {
-      modal.style.display = 'none'
-    }
-    else modal.style.display = 'block'
-  }
+  // new modal
+  const [isOpen, setIsOpen] = useState(false)
 
-  window.onclick = function (event) {
-    const modal = document.querySelector('.modal')
-    if (event.target == modal) {
-      switchModal()
-    }
-  }
+
+  // Modal functions
+  // const switchModal = () => {
+  //   const modal = document.querySelector('.modal')
+  //   const actualStyle = modal.style.display
+  //   if (actualStyle == 'block') {
+  //     modal.style.display = 'none'
+  //   }
+  //   else modal.style.display = 'block'
+  // }
+
+  // window.onclick = function (event) {
+  //   const modal = document.querySelector('.modal')
+  //   if (event.target == modal) {
+  //     switchModal()
+  //   }
+  // }
 
   // Dias restantes até o vencimento do produto
   function daysRemaining() { // possivel bug
@@ -99,38 +104,11 @@ const Home = () => {
 
   return (
     <div>
-      {/* Modal */}
-      <div className='modal'>
-        <div className='content'>
-          <form>
-            <p>Adicionar produto</p>
-
-            <label>Nome do produto:</label>
-            <input
-              type="text"
-              onChange={e => setProdName(e.target.value)}
-              value={prodName}
-            />
-
-            <label>Expiration Date</label>
-            <input
-              type="date"
-              onChange={e => setProdDate(e.target.value)}
-              value={prodDate}
-            />
-
-            <button
-              type='button'
-              onClick={handleAddProduct}>
-              Adicionar
-            </button>
-          </form>
-        </div>
-      </div>
-
       <header>
-        <nav><button onClick={switchModal}>New</button></nav>
+        <nav><button onClick={() => setIsOpen(true)}>New</button></nav>
       </header>
+
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
 
       <hr />
 
