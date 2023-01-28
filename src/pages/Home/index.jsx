@@ -21,7 +21,7 @@ const Home = () => {
   // abre o modal
   const [isOpen, setIsOpen] = useState(false)
 
-  return (
+  return (  
     <div>
       <header>
         <Navbar />
@@ -38,7 +38,8 @@ const Home = () => {
           placeholder='Procurar produto'
         />
       </div>
-      <RenderProducts />
+      
+      <RenderProducts products={data}/>
     </div>
   )
 }
