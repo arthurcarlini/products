@@ -1,10 +1,34 @@
 import React from 'react'
 
-const index = ({id, name, price, totalAmount, date}) => {
+import './ProductsTable.css'
+import ProductsTableRow from '../ProductsTableRow'
+
+
+const index = ({ products }) => {
     return (
-        <div id='table'>
-            <p>table</p>
-        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Ultima entrada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {products.map(prod => <ProductsTableRow
+                        key={prod.id}
+                        id={prod.id}
+                        name={prod.productName}
+                        price={prod.productPrice}
+                        totalAmount={prod.totalAmount}
+                        date={prod.productDate}
+                    />)}
+                </tbody>
+            </table>
+        </div >
     )
 }
 

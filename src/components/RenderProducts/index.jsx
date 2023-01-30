@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import ProductCard from '../ProductsCard'
-import ProductTable from '../ProductsTable'
+import ProductsTable from '../ProductsTable'
 
 const index = ({ products }) => {
 
@@ -15,16 +15,11 @@ const index = ({ products }) => {
             <button
                 onClick={() => setIsCard(false)}>Tabela
             </button>
-            {!isCard && products.map(prod => <ProductTable
-                key={prod.id}
-                name={prod.productName}
-                price={prod.productPrice}
-                totalAmount={prod.totalAmount}
-                date={prod.productDate}
-            />)}
+            {!isCard && <ProductsTable products={products} />}
 
             {isCard && products.map(prod => <ProductCard
                 key={prod.id}
+                id={prod.id}
                 image={prod.productImage}
                 name={prod.productName}
                 price={prod.productPrice}
