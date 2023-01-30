@@ -39,7 +39,7 @@ const Home = () => {
         />
       </div>
       
-      <RenderProducts products={data}/>
+      <RenderProducts products={data} />
     </div>
   )
 }
