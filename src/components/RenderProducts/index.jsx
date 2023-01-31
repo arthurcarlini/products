@@ -15,6 +15,7 @@ const index = ({ products }) => {
             <button
                 onClick={() => setIsCard(false)}>Tabela
             </button>
+
             {!isCard && <ProductsTable products={products} />}
 
             {isCard && products.map(prod => <ProductCard

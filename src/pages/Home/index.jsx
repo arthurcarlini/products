@@ -4,6 +4,7 @@ import './Home.css'
 import api from '../../api'
 import Navbar from '../../components/Navbar'
 import RenderProducts from '../../components/RenderProducts'
+import SearchProducts from '../../components/SearchProducts'
 
 const Home = () => {
 
@@ -21,7 +22,7 @@ const Home = () => {
   // abre o modal
   const [isOpen, setIsOpen] = useState(false)
 
-  return (  
+  return (
     <div>
       <header>
         <Navbar />
@@ -33,12 +34,9 @@ const Home = () => {
 
       <div id='content'>
         <h1>Produtos</h1>
-        <input
-          type="text"
-          placeholder='Procurar produto'
-        />
+        <SearchProducts products={data} />
       </div>
-      
+
       <RenderProducts products={data} />
     </div>
   )
