@@ -3,12 +3,11 @@ import './Home.css'
 
 import api from '../../api'
 import Navbar from '../../components/Navbar'
-import RenderProducts from '../../components/RenderProducts'
-import SearchProducts from '../../components/SearchProducts'
+import Products from '../../components/Products'
 
 const Home = () => {
 
-  // pega os produtos
+  // get products
   const [data, setData] = useState([])
   console.log(data)
 
@@ -19,7 +18,7 @@ const Home = () => {
   }, [])
 
 
-  // abre o modal
+  // open modal
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -34,10 +33,8 @@ const Home = () => {
 
       <div id='content'>
         <h1>Produtos</h1>
-        <SearchProducts products={data} />
+        <Products products={data} />
       </div>
-
-      <RenderProducts products={data} />
     </div>
   )
 }
