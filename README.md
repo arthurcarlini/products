@@ -4,4 +4,5 @@
 
 O projeto funciona como uma lista de produtos aonde cada um possue suas informações para controle de estoque de um varejo.
 
-![prints-projeto](https://github.com/arthurcarlini/products/blob/main/src/images/inicio-products-project.png)
+![prints-projeto](https://github.com/arthurcarlini/products/blob/main/project_images/project1.png)
+![prints-projeto](https://github.com/arthurcarlini/products/blob/main/project_images/project2.png)
