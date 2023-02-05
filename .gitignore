@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 1-notes.md
-src/db
+notas.md
+src/db/db.json
