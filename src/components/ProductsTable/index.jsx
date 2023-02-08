@@ -21,10 +21,11 @@ const index = ({ products }) => {
                     {products.map(prod => <ProductsTableRow
                         key={prod.id}
                         id={prod.id}
+                        image={prod.productImage}
                         name={prod.productName}
                         price={prod.productPrice}
                         totalAmount={prod.totalAmount}
-                        date={prod.productDate}
+                        entryDate={prod.productEntryDate}
                     />)}
                 </tbody>
             </table>

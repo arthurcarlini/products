@@ -10,7 +10,7 @@ const index = ({ setIsOpen }) => {
     const [productImage, setProductImage] = useState('')
     const [productName, setProductName] = useState('')
     const [productPrice, setProductPrice] = useState(0)
-    const [productDate, setProductDate] = useState('')
+    const [productEntryDate, setProductEntryDate] = useState('')
     const [totalAmount, setTotalAmount] = useState(0)
 
     function handleProdImage(e) {
@@ -25,8 +25,8 @@ const index = ({ setIsOpen }) => {
         setProductPrice(e.target.value)
     }
 
-    function handleProdDate(e) {
-        setProductDate(e.target.value)
+    function handleProdEntryDate(e) {
+        setProductEntryDate(e.target.value)
     }
 
     function handleTotalAmount(e) {
@@ -40,7 +40,7 @@ const index = ({ setIsOpen }) => {
             productImage,
             productName,
             productPrice,
-            productDate,
+            productEntryDate,
             totalAmount
         })
             .then((response => console.log(response.data)))
@@ -49,7 +49,7 @@ const index = ({ setIsOpen }) => {
         setProductImage('')
         setProductName('')
         setProductPrice(0)
-        setProductDate('')
+        setProductEntryDate('')
         setTotalAmount(0)
     }
 
@@ -93,8 +93,8 @@ const index = ({ setIsOpen }) => {
                             <input
                                 name="productDate"
                                 type="date"
-                                value={productDate}
-                                onChange={handleProdDate} />
+                                value={productEntryDate}
+                                onChange={handleProdEntryDate} />
                         </label>
 
                         <label>

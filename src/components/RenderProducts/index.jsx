@@ -24,6 +24,7 @@ const index = ({ products }) => {
                 image={prod.productImage}
                 name={prod.productName}
                 price={prod.productPrice}
+                entryDate={prod.productEntryDate}
                 totalAmount={prod.totalAmount}
             />)}
         </div>

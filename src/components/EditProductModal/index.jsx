@@ -3,14 +3,14 @@ import { useState } from 'react'
 import api from '../../api'
 
 
-const index = ({ setIsOpen, id }) => {
+const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
     const url = "http://localhost:3000/products"
 
-    const [productImage, setProductImage] = useState('')
-    const [productName, setProductName] = useState('')
-    const [productPrice, setProductPrice] = useState(0)
-    const [productDate, setProductDate] = useState('')
-    const [totalAmount, setTotalAmount] = useState(0)
+    const [productImage, setProductImage] = useState(image)
+    const [productName, setProductName] = useState(name)
+    const [productPrice, setProductPrice] = useState(price)
+    const [productEntryDate, setProductEntryDate] = useState(entryDate)
+    const [totalAmount, setTotalAmount] = useState(amount)
 
     function handleProdImage(e) {
         setProductImage(e.target.value)
@@ -24,8 +24,8 @@ const index = ({ setIsOpen, id }) => {
         setProductPrice(e.target.value)
     }
 
-    function handleProdDate(e) {
-        setProductDate(e.target.value)
+    function handleProdEntryDate(e) {
+        setProductEntryDate(e.target.value)
     }
 
     function handleTotalAmount(e) {
@@ -35,11 +35,11 @@ const index = ({ setIsOpen, id }) => {
     function handleInput(event) {
         event.preventDefault()
 
-        api.put(`${url}/${id}`, { // terminar isso
+        api.put(`${url}/${id}`, {
             productImage,
             productName,
             productPrice,
-            productDate,
+            productEntryDate,
             totalAmount
         })
             .then((response => console.log(response.data)))
@@ -48,7 +48,7 @@ const index = ({ setIsOpen, id }) => {
         setProductImage('')
         setProductName('')
         setProductPrice(0)
-        setProductDate('')
+        setProductEntryDate('')
         setTotalAmount(0)
     }
 
@@ -88,12 +88,12 @@ const index = ({ setIsOpen, id }) => {
                         </label>
 
                         <label>
-                            Expiration Date:
+                            Data de entrada:
                             <input
                                 name="productDate"
                                 type="date"
-                                value={productDate}
-                                onChange={handleProdDate} />
+                                value={productEntryDate}
+                                onChange={handleProdEntryDate} />
                         </label>
 
                         <label>
