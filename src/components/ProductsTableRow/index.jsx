@@ -1,11 +1,4 @@
-import { useState } from 'react'
-
-import EditProductModal from '../EditProductModal'
-
-const index = ({ id, image, name, price, totalAmount, entryDate }) => {
-
-    const [isOpen, setIsOpen] = useState(false)
-
+const index = ({ id, name, price, totalAmount, entryDate, setIsOpen }) => {
     return (
         <tr>
             <td>{id}</td>
@@ -14,15 +7,6 @@ const index = ({ id, image, name, price, totalAmount, entryDate }) => {
             <td>{totalAmount}</td>
             <td>{entryDate}</td>
             <td><button onClick={() => setIsOpen(true)}>edit</button></td>
-            {isOpen && <EditProductModal
-                setIsOpen={setIsOpen}
-                id={id}
-                image={image}
-                name={name}
-                price={price}
-                amount={totalAmount}
-                entryDate={entryDate} 
-            />}
         </tr>
     )
 }

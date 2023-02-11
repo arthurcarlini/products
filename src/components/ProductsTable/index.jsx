@@ -1,10 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
 
 import './ProductsTable.css'
-import ProductsTableRow from '../ProductsTableRow'
 
+import ProductsTableRow from '../ProductsTableRow'
+import EditProductModal from '../EditProductModal'
 
 const index = ({ products }) => {
+
+    // check if the modal is open
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
         <div>
             <table>
@@ -26,9 +31,20 @@ const index = ({ products }) => {
                         price={prod.productPrice}
                         totalAmount={prod.totalAmount}
                         entryDate={prod.productEntryDate}
+                        setIsOpen={setIsOpen}
                     />)}
                 </tbody>
             </table>
+            {isOpen && products.map(prod => <EditProductModal
+                setIsOpen={setIsOpen}
+                key={prod.id}
+                id={prod.id}
+                image={prod.productImage}
+                name={prod.productName}
+                price={prod.productPrice}
+                amount={prod.totalAmount}
+                entryDate={prod.productEntryDate}
+            />)}
         </div >
     )
 }
