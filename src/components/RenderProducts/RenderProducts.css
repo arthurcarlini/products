@@ -1,0 +1,21 @@
+.buttons {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cardButton {
+    margin-right: .8rem;
+}
+
+.tableButton {
+    margin-right: .1rem;
+}
+
+.productCard {
+    display: flex;
+}
+
+.productsTable {
+    display: flex;
+    justify-content: center;
+}

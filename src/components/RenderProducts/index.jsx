@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import './RenderProducts.css'
+
 import ProductCard from '../ProductsCard'
 import ProductsTable from '../ProductsTable'
 
@@ -9,24 +11,30 @@ const index = ({ products }) => {
 
     return (
         <div>
-            <button
-                onClick={() => setIsCard(true)}>Card
-            </button>
-            <button
-                onClick={() => setIsCard(false)}>Tabela
-            </button>
+            <div className="buttons">
+                <button className="cardButton"
+                    onClick={() => setIsCard(true)}>Card
+                </button>
+                <button className="tableButton"
+                    onClick={() => setIsCard(false)}>Tabela
+                </button>
+            </div>
 
-            {!isCard && <ProductsTable products={products} />}
+            <div className="productsTable">
+                {!isCard && <ProductsTable products={products} />}
+            </div>
 
-            {isCard && products.map(prod => <ProductCard
-                key={prod.id}
-                id={prod.id}
-                image={prod.productImage}
-                name={prod.productName}
-                price={prod.productPrice}
-                entryDate={prod.productEntryDate}
-                totalAmount={prod.totalAmount}
-            />)}
+            <div className="productCard">
+                {isCard && products.map(prod => <ProductCard
+                    key={prod.id}
+                    id={prod.id}
+                    image={prod.productImage}
+                    name={prod.productName}
+                    price={prod.productPrice}
+                    entryDate={prod.productEntryDate}
+                    totalAmount={prod.totalAmount}
+                />)}
+            </div>
         </div>
     )
 }

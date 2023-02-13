@@ -31,10 +31,8 @@ const Home = () => {
 
       <hr />
 
-      <div id='content'>
-        <h1>Produtos</h1>
-        <Products products={data} />
-      </div>
+      <h1>Produtos</h1>
+      <Products products={data} />
     </div>
   )
 }
