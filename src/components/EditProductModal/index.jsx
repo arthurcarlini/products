@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
+import './EditProductModal.css'
 import api from '../../api'
-
 
 const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
     const url = "http://localhost:3000/products"
@@ -62,7 +62,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
 
                         <label>
                             Imagem:
-                            <input
+                            <input className='formInput'
                                 name="productImage"
                                 type="url"
                                 value={productImage}
@@ -71,7 +71,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
 
                         <label>
                             Nome do produto:
-                            <input
+                            <input className='formInput'
                                 name="productName"
                                 type="text"
                                 value={productName}
@@ -80,7 +80,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
 
                         <label>
                             Preço:
-                            <input
+                            <input className='formInput'
                                 name="productPrice"
                                 type="number"
                                 value={productPrice}
@@ -89,7 +89,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
 
                         <label>
                             Data de entrada:
-                            <input
+                            <input className='formInput'
                                 name="productDate"
                                 type="date"
                                 value={productEntryDate}
@@ -98,7 +98,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
 
                         <label>
                             Quantidade:
-                            <input
+                            <input className='formInput'
                                 name="totalAmount"
                                 type="number"
                                 value={totalAmount}

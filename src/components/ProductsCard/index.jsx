@@ -14,7 +14,7 @@ const index = ({ id, image, name, price, totalAmount, entryDate }) => {
             <span>Nome: {name}</span>
             <span>Preço: {price}</span>
             <span>Quantidade: {totalAmount}</span>
-            <button onClick={() => setIsOpen(true)}>edit</button>
+            <button onClick={() => setIsOpen(true)}>editar</button>
             {isOpen && <EditProductModal
                 setIsOpen={setIsOpen}
                 id={id}

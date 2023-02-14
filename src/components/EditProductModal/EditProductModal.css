@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formInput {
+    width: 125px;
+
+    /* border: none; */
+    /* background-color: transparent; */
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .content {
+    background-color: #A6A6A6;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+}

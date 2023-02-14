@@ -6,7 +6,7 @@ const index = ({ id, name, price, totalAmount, entryDate, setIsOpen }) => {
             <td>{price}</td>
             <td>{totalAmount}</td>
             <td>{entryDate}</td>
-            <td><button onClick={() => setIsOpen(true)}>edit</button></td>
+            <td><button className="editButton" onClick={() => setIsOpen(true)}>editar</button></td>
         </tr>
     )
 }

@@ -1,3 +1,5 @@
+import './Search.css'
+
 const index = ({ searchProducts, setSearchedProduct }) => {
 
     function handleInput(e) {
@@ -5,7 +7,7 @@ const index = ({ searchProducts, setSearchedProduct }) => {
     }
 
     return (
-        <div>
+        <div className="search">
             <input
                 type="input"
                 placeholder='Procurar...'
