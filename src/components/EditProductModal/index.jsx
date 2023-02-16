@@ -57,10 +57,9 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
         <div>
             <div className='modal'>
                 <div className='content'>
-                    <form onSubmit={handleInput}>
-                        <h1>Adicionar produto</h1>
-
-                        <label>
+                    <span className='formTitle'>Adicionar produto</span>
+                    <form className='form' onSubmit={handleInput}>
+                        <label className='editLabel'>
                             Imagem:
                             <input className='formInput'
                                 name="productImage"
@@ -69,7 +68,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
                                 onChange={handleProdImage} />
                         </label>
 
-                        <label>
+                        <label className='editLabel'>
                             Nome do produto:
                             <input className='formInput'
                                 name="productName"
@@ -78,7 +77,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
                                 onChange={handleProdName} />
                         </label>
 
-                        <label>
+                        <label className='editLabel'>
                             Preço:
                             <input className='formInput'
                                 name="productPrice"
@@ -87,7 +86,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
                                 onChange={handleProdPrice} />
                         </label>
 
-                        <label>
+                        <label className='editLabel'>
                             Data de entrada:
                             <input className='formInput'
                                 name="productDate"
@@ -96,7 +95,7 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
                                 onChange={handleProdEntryDate} />
                         </label>
 
-                        <label>
+                        <label className='editLabel'>
                             Quantidade:
                             <input className='formInput'
                                 name="totalAmount"
@@ -105,13 +104,9 @@ const index = ({ setIsOpen, id, image, name, price, entryDate, amount }) => {
                                 onChange={handleTotalAmount} />
                         </label>
 
-                        <label>
-
-                        </label>
-
-                        <input type="submit" />
+                        <input className='formsButtons' type="submit" value="Adicionar"/>
                     </form>
-                    <button onClick={() => setIsOpen(false)}>Fechar</button>
+                    <button className='formsButtons' onClick={() => setIsOpen(false)}>Fechar</button>
                 </div>
             </div>
         </div>

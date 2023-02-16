@@ -8,13 +8,15 @@ const index = ({ id, image, name, price, totalAmount, entryDate }) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div id='card'>
-            <span>ID: {id}</span>
-            <img src={image} alt="imagem do produto" />
-            <span>Nome: {name}</span>
-            <span>Preço: {price}</span>
-            <span>Quantidade: {totalAmount}</span>
-            <button onClick={() => setIsOpen(true)}>editar</button>
+        <div>
+            <div id='card'>
+                <span>ID: {id}</span>
+                <img src={image} alt="imagem do produto" />
+                <span>Nome: {name}</span>
+                <span>Preço: {price}</span>
+                <span>Quantidade: {totalAmount}</span>
+                <button onClick={() => setIsOpen(true)}>editar</button>
+            </div>
             {isOpen && <EditProductModal
                 setIsOpen={setIsOpen}
                 id={id}
